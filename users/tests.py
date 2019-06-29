@@ -1,14 +1,14 @@
 """Test cases for users app."""
 from datetime import timedelta
+
 from django.utils import timezone
 from rest_framework.test import APITestCase
-from events.models import Event
+
 from bodies.models import Body
-from users.models import UserTag
-from users.models import UserTagCategory
-from users.models import UserProfile
-from other.models import Device
+from events.models import Event
 from login.tests import get_new_user
+from other.models import Device
+from users.models import UserProfile, UserTag, UserTagCategory
 
 # pylint: disable=R0915
 

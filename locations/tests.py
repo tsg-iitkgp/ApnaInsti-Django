@@ -1,12 +1,13 @@
 """Unit tests for Location."""
 from django.utils import timezone
 from rest_framework.test import APITestCase
+
+from bodies.models import Body
 from events.models import Event
 from locations.models import Location
-from bodies.models import Body
-from roles.models import BodyRole
-from roles.models import InstituteRole
 from login.tests import get_new_user
+from roles.models import BodyRole, InstituteRole
+
 
 class LocationTestCase(APITestCase):
     """Check if we can create locations."""

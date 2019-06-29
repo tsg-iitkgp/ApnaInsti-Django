@@ -1,11 +1,11 @@
 """Unit tests for Roles."""
 from rest_framework.test import APITestCase
-from bodies.models import Body
-from bodies.models import BodyChildRelation
-from roles.models import BodyRole
-from roles.models import InstituteRole
-from users.models import UserFormerRole
+
+from bodies.models import Body, BodyChildRelation
 from login.tests import get_new_user
+from roles.models import BodyRole, InstituteRole
+from users.models import UserFormerRole
+
 
 class RoleTestCase(APITestCase):
     """Tests for roles."""

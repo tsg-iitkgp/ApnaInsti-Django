@@ -1,13 +1,13 @@
 """Chore to send push notifications."""
-from django.core.management.base import BaseCommand
 from django.conf import settings
-from pyfcm import FCMNotification
+from django.core.management.base import BaseCommand
 from notifications.models import Notification
+from pyfcm import FCMNotification
 
-from helpers.fcm import send_notification_fcm
-from helpers.fcm import send_fcm_notification_message
-from helpers.fcm import get_rich_notification
+from helpers.fcm import (get_rich_notification, send_fcm_notification_message,
+                         send_notification_fcm)
 from helpers.webpush import send_notification_webpush
+
 
 class Command(BaseCommand):
     help = 'Sends push notifications'

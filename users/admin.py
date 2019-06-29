@@ -1,9 +1,8 @@
 from django.contrib import admin
-from users.models import UserProfile
-from users.models import UserFormerRole
-from users.models import WebPushSubscription
-from users.models import UserTagCategory
-from users.models import UserTag
+
+from users.models import (UserFormerRole, UserProfile, UserTag,
+                          UserTagCategory, WebPushSubscription)
+
 
 class ProfileAdmin(admin.ModelAdmin):
     search_fields = ['name', 'roll_no']

@@ -1,5 +1,6 @@
 """URLs for roles."""
 from django.urls import path
+
 from roles.views import BodyRoleViewSet
 
 urlpatterns = [

@@ -2,8 +2,9 @@
 import gspread
 from django.core.management.base import BaseCommand
 from oauth2client.service_account import ServiceAccountCredentials
-from messmenu.models import MenuEntry
-from messmenu.models import Hostel
+
+from messmenu.models import Hostel, MenuEntry
+
 
 def update_day(sheet, day, hostel):
     """Update one day's menu."""

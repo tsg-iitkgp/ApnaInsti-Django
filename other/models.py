@@ -1,9 +1,11 @@
 """Extra models for notifications."""
 from uuid import uuid4
+
 from dateutil.parser import parse
-from django.db import models
 from django.contrib.sessions.models import Session
+from django.db import models
 from django.utils import timezone
+
 
 class Device(models.Model):
     """A device to which a user is logged in.

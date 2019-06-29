@@ -1,8 +1,10 @@
 """Views for mess menu."""
-from rest_framework.response import Response
 from rest_framework.decorators import api_view
+from rest_framework.response import Response
+
 from messmenu.models import Hostel
 from messmenu.serializers import HostelSerializer
+
 
 @api_view(['GET', ])
 def get_mess(request):

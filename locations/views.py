@@ -1,13 +1,13 @@
 """Views for locations app."""
 from rest_framework import viewsets
 from rest_framework.response import Response
-from locations.serializers import LocationSerializer
+
 from locations.models import Location
-from roles.helpers import insti_permission_required
-from roles.helpers import login_required_ajax
-from roles.helpers import user_has_insti_privilege
-from roles.helpers import user_has_privilege
-from roles.helpers import forbidden_no_privileges
+from locations.serializers import LocationSerializer
+from roles.helpers import (forbidden_no_privileges, insti_permission_required,
+                           login_required_ajax, user_has_insti_privilege,
+                           user_has_privilege)
+
 
 class LocationViewSet(viewsets.ModelViewSet):
     """Location"""

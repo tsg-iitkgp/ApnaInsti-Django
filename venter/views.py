@@ -1,24 +1,21 @@
 """Views for venter."""
-from functools import reduce
 import operator
-from django.db.models import Q
+from functools import reduce
+
 from django.conf import settings
-from rest_framework.generics import get_object_or_404
+from django.db.models import Q
 from rest_framework import viewsets
+from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
+
 from helpers.misc import query_from_num
 from roles.helpers import login_required_ajax
+from venter.models import (Complaint, ComplaintComment, ComplaintImage,
+                           ComplaintTag)
+from venter.serializers import (CommentPostSerializer, CommentSerializer,
+                                ComplaintPostSerializer, ComplaintSerializer,
+                                TagSerializer)
 
-from venter.models import Complaint
-from venter.models import ComplaintComment
-from venter.models import ComplaintImage
-from venter.models import ComplaintTag
-
-from venter.serializers import ComplaintSerializer
-from venter.serializers import TagSerializer
-from venter.serializers import ComplaintPostSerializer
-from venter.serializers import CommentPostSerializer
-from venter.serializers import CommentSerializer
 
 class TagViewSet(viewsets.ModelViewSet):
     queryset = ComplaintTag.objects

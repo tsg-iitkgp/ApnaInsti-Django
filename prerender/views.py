@@ -1,16 +1,18 @@
 """Views for prerendered content for SEO."""
 from uuid import UUID
+
+from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django.template.loader import render_to_string
-from django.conf import settings
 from django.utils import timezone
-from users.models import UserProfile
+
+from bodies.models import Body
 from events.models import Event
 from events.prioritizer import get_fresh_prioritized_events
-from news.models import NewsEntry
-from bodies.models import Body
 from locations.models import Location
+from news.models import NewsEntry
+from users.models import UserProfile
 
 url_mapping = {
     Event: '/event/',

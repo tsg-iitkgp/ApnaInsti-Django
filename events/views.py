@@ -1,17 +1,17 @@
 """Views for events app."""
 from uuid import UUID
-from rest_framework.response import Response
-from rest_framework import viewsets
+
 from django.shortcuts import get_object_or_404
-from events.prioritizer import get_fresh_prioritized_events
-from events.prioritizer import get_prioritized
-from events.serializers import EventSerializer
-from events.serializers import EventFullSerializer
+from rest_framework import viewsets
+from rest_framework.response import Response
+
 from events.models import Event
-from roles.helpers import user_has_privilege
-from roles.helpers import login_required_ajax
-from roles.helpers import forbidden_no_privileges, diff_set
+from events.prioritizer import get_fresh_prioritized_events, get_prioritized
+from events.serializers import EventFullSerializer, EventSerializer
 from locations.helpers import create_unreusable_locations
+from roles.helpers import (diff_set, forbidden_no_privileges,
+                           login_required_ajax, user_has_privilege)
+
 
 class EventViewSet(viewsets.ModelViewSet):
     """Event"""

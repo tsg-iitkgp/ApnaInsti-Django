@@ -170,3 +170,6 @@ NO_CELERY = os.environ.get('NO_CELERY') != 'false'
 DEFAULT_FROM_EMAIL = 'webmaster@localhost'
 
 COMPLAINT_AUTO_SUBSCRIBE = True
+
+# email validation
+INSTI_MAIL_SUFFIX = 'iitkgp.ac.in'

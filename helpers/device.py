@@ -1,8 +1,10 @@
 """Helpers for notification device model."""
+from django.contrib.sessions.models import Session
 from django.db.models import Q
 from django.utils import timezone
-from django.contrib.sessions.models import Session
+
 from other.models import Device
+
 
 def update_fcm_device(request, fcm_id):
     """Create or update device."""

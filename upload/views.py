@@ -1,9 +1,11 @@
 """Views for upload app."""
 from rest_framework import viewsets
-from upload.serializers import Base64UploadedImageSerializer
-from upload.serializers import UploadedImageSerializer
-from upload.models import UploadedImage
+
 from roles.helpers import login_required_ajax
+from upload.models import UploadedImage
+from upload.serializers import (Base64UploadedImageSerializer,
+                                UploadedImageSerializer)
+
 
 class UploadViewSet(viewsets.ModelViewSet):
     """Upload"""

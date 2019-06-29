@@ -1,5 +1,6 @@
 """URLs for other app."""
 from django.urls import path
+
 from other.views import OtherViewset
 
 urlpatterns = [

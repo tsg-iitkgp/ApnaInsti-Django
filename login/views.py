@@ -1,10 +1,12 @@
 """Login Viewset."""
 import requests
 from django.conf import settings
-from django.contrib.auth import logout
+from django.contrib.auth import authenticate, logout
+from django.contrib.auth.models import User
 from rest_framework import viewsets
 from rest_framework.response import Response
-from login.helpers import perform_login
+
+from login.helpers import perform_login, perform_signup, valid_insti_id
 from users.models import UserProfile
 from users.serializer_full import UserProfileFullSerializer
 
@@ -14,26 +16,28 @@ class LoginViewSet(viewsets.ViewSet):
     """Login"""
 
     @staticmethod
-    def login(request):
-        """Log in.
-        Uses the `code` and `redir` query parameters."""
+    def signup(request):
+        """
+        Signup using institute email ID.
+        
+        Signup using a user's institute email ID and send them a password over there.
+        """
 
-        # Check if we have the auth code
-        auth_code = request.GET.get('code')
-        if auth_code is None:
-            return Response({"message": "{?code} is required"}, status=400)
+        # Check if we have the institute email ID
+        instiID = request.GET.get('username')
+        if instiID is None:
+            return Response({"message": "instituteID is required"}, status=400)
+        
+        if not valid_insti_id(instiID):
+            return Response({"message": "instituteID is not valid"}, status=400)
 
-        # Check we have redir param
-        redir = request.GET.get('redir')
-        if redir is None:
-            return Response({"message": "{?redir} is required"}, status=400)
-
-        return perform_login(auth_code, redir, request)
-
+        return perform_signup(instiID, request)
+    
     @staticmethod
     def pass_login(request):
-        """DANGEROUS: Password Log in.
-        Uses the `username` and `password` query parameters."""
+        """
+        Login using institute email address and password.
+        """
 
         # Check if we have the username
         username = request.GET.get('username')
@@ -44,58 +48,11 @@ class LoginViewSet(viewsets.ViewSet):
         password = request.GET.get('password')
         if password is None:
             return Response({"message": "{?password} is required"}, status=400)
-
-        # Make a new session
-        session = requests.Session()
-
-        # Get constants
-        URL = settings.SSO_LOGIN_URL
-        REDIR = settings.SSO_DEFAULT_REDIR
-
-        # Get a CSRF token and update referer
-        response = session.get(URL, verify=not settings.SSO_BAD_CERT)
-        csrf = response.cookies['csrftoken']
-        session.headers.update({'referer': URL})
-
-        # Make POST data
-        data = {
-            "csrfmiddlewaretoken": csrf,
-            "next": URL,
-            "username": username,
-            "password": password,
-        }
-
-        # Authenticate
-        response = session.post(URL, data=data, verify=not settings.SSO_BAD_CERT)
-        if not response.history:
-            return Response({"message": "Bad username or password"}, status=403)
-
-        # If the user has not authenticated in the past
-        if "?code=" not in response.url:
-            # Get the authorize page
-            response = session.get(response.url, verify=not settings.SSO_BAD_CERT)
-            csrf = response.cookies['csrftoken']
-
-            # Grant all SSO permissions
-            data = {
-                "csrfmiddlewaretoken": csrf,
-                "redirect_uri": REDIR,
-                "scope": "basic profile picture ldap sex phone program secondary_emails insti_address",
-                "client_id": settings.SSO_CLIENT_ID,
-                "state": "",
-                "response_type": "code",
-                "scopes_array": [
-                    "profile", "picture", "ldap", "sex", "phone",
-                    "program", "secondary_emails", "insti_address"
-                ],
-                "allow": "Authorize"
-            }
-            response = session.post(response.url, data, verify=not settings.SSO_BAD_CERT)
-
-        # Get our auth code
-        auth_code = response.url.split("?code=", 1)[1]
-
-        return perform_login(auth_code, REDIR, request)
+        
+        if User.objects.filter(username=username).first() is None:
+            return Response({"message": "no user with {} found".format(username)}, status=404)
+        
+        return perform_login(request)
 
     @staticmethod
     def get_user(request):

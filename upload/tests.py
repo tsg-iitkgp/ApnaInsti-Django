@@ -1,17 +1,16 @@
 """Unit tests for upload."""
 import os
-from os.path import isfile
 from datetime import timedelta
-from django.core.management import call_command
+from os.path import isfile
+
 from django.core.files.uploadedfile import SimpleUploadedFile
+from django.core.management import call_command
 from django.utils import timezone
 from freezegun import freeze_time
 from rest_framework.test import APITestCase
 
+from helpers.test_helpers import create_body, create_event
 from login.tests import get_new_user
-from helpers.test_helpers import create_event
-from helpers.test_helpers import create_body
-
 from upload.models import UploadedImage
 
 get_image = lambda: SimpleUploadedFile(

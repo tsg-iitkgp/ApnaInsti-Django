@@ -1,7 +1,7 @@
 """URLs for bodies."""
 from django.urls import path
-from bodies.views import BodyViewSet
-from bodies.views import BodyFollowersViewSet
+
+from bodies.views import BodyFollowersViewSet, BodyViewSet
 
 urlpatterns = [
     path('bodies', BodyViewSet.as_view({

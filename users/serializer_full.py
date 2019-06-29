@@ -1,11 +1,12 @@
 """Full serializer for UserProfile with detailed information and events."""
 from django.conf import settings
 from rest_framework import serializers
+
 from events.prioritizer import get_fresh_prioritized_events
+from roles.serializers import (FormerRoleSerializer, InstituteRoleSerializer,
+                               RoleSerializer)
 from users.models import UserProfile
-from roles.serializers import RoleSerializer
-from roles.serializers import FormerRoleSerializer
-from roles.serializers import InstituteRoleSerializer
+
 
 class UserProfileFullSerializer(serializers.ModelSerializer):
     """Full serializer for UserProfile with detailed information and events."""

@@ -1,5 +1,7 @@
 from django.contrib import admin
+
 from upload.models import UploadedImage
+
 
 class UploadedImageAdmin(admin.ModelAdmin):
     list_display = ('uploaded_by', 'is_claimed', 'claimant')

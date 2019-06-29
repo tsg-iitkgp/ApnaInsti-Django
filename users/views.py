@@ -1,20 +1,18 @@
 """Views for users app."""
 from uuid import UUID
+
+from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
 
-from login.helpers import update_fcm_device
-
-from events.models import UserEventStatus
-from events.models import Event
+from events.models import Event, UserEventStatus
 from events.serializers import EventSerializer
-from news.models import UserNewsReaction
-from news.models import NewsEntry
-from users.serializer_full import UserProfileFullSerializer
-from users.models import UserProfile
-from users.models import WebPushSubscription
+from login.helpers import update_fcm_device
+from news.models import NewsEntry, UserNewsReaction
 from roles.helpers import login_required_ajax
+from users.models import UserProfile, WebPushSubscription
+from users.serializer_full import UserProfileFullSerializer
+
 
 class UserProfileViewSet(viewsets.ModelViewSet):
     """UserProfile"""

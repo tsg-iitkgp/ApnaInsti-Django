@@ -1,13 +1,15 @@
 """Chore to aggregate news from all bodies."""
 from datetime import timedelta
+
 import feedparser
 import requests
 import urllib3
 from dateutil.parser import parse
-from django.utils import timezone
 from django.core.management.base import BaseCommand, CommandError
-from news.models import NewsEntry
+from django.utils import timezone
+
 from bodies.models import Body
+from news.models import NewsEntry
 
 # Disable log garbage due to Insecure warnings
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)

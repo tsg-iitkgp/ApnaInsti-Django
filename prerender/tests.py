@@ -1,11 +1,12 @@
 """Unit tests for upload."""
 from rest_framework.test import APITestCase
-from bodies.models import Body
-from bodies.models import BodyChildRelation
+
+from bodies.models import Body, BodyChildRelation
+from helpers.test_helpers import create_event
+from locations.models import Location
 from news.models import NewsEntry
 from users.models import UserProfile
-from locations.models import Location
-from helpers.test_helpers import create_event
+
 
 class PrerenderTestCase(APITestCase):
     """Check if prerender is working."""

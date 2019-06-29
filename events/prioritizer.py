@@ -1,7 +1,9 @@
 """Event prioritizer."""
 import math
 from datetime import timedelta
+
 from django.utils import timezone
+
 from events.serializers import EventSerializer
 
 BASE = 1000                              # Base points

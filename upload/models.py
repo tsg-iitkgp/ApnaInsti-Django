@@ -1,11 +1,13 @@
 """Models for Uploaded Images."""
 from uuid import uuid4
+
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
 from django.db import models
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
-from django.contrib.contenttypes.fields import GenericForeignKey
-from django.contrib.contenttypes.models import ContentType
 from PIL import Image
+
 
 def get_image_path(instance, filename):
     userid = str(instance.uploaded_by.id)

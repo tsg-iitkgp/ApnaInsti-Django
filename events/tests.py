@@ -1,15 +1,14 @@
 """Unit tests for Events."""
-from django.utils import timezone
 from django.test import TransactionTestCase
+from django.utils import timezone
 from rest_framework.test import APIClient
+
 from bodies.models import BodyChildRelation
 from events.models import Event
-from roles.models import BodyRole
+from helpers.test_helpers import (create_body, create_event, create_usertag,
+                                  create_usertagcategory)
 from login.tests import get_new_user
-from helpers.test_helpers import create_body
-from helpers.test_helpers import create_event
-from helpers.test_helpers import create_usertag
-from helpers.test_helpers import create_usertagcategory
+from roles.models import BodyRole
 
 # pylint: disable=R0902
 

@@ -1,7 +1,9 @@
 """Serializer for News Feed."""
 from rest_framework import serializers
-from news.models import NewsEntry
+
 from bodies.serializers import BodySerializerMin
+from news.models import NewsEntry
+
 
 class NewsEntrySerializer(serializers.ModelSerializer):
     """Serializer for NewsEntry."""

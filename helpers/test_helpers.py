@@ -1,10 +1,12 @@
 """Helpers for creation of objects in tests."""
 from datetime import timedelta
+
 from django.utils import timezone
+
 from bodies.models import Body
 from events.models import Event
-from users.models import UserTag
-from users.models import UserTagCategory
+from users.models import UserTag, UserTagCategory
+
 
 def create_event(start_time_delta=0, end_time_delta=0, **kwargs):
     """Create an event with optional start and end times."""

@@ -1,28 +1,25 @@
 """Unit tests for news feed."""
-import time
 import json
-
+import time
 import xml.etree.ElementTree as ET
 
-from rest_framework.test import APIClient
 from django.conf import settings
 from django.test import TransactionTestCase
 from django.utils import timezone
-from notifications.signals import notify
 from notifications.models import Notification
+from notifications.signals import notify
+from rest_framework.test import APIClient
 
-from login.tests import get_new_user
 from bodies.models import Body
 from events.serializers import EventSerializer
-from users.models import UserProfile
+from helpers.test_helpers import (create_body, create_event, create_usertag,
+                                  create_usertagcategory)
+from login.tests import get_new_user
 from news.models import NewsEntry
 from placements.models import BlogEntry
+from users.models import UserProfile
 from venter.models import Complaint
 
-from helpers.test_helpers import create_usertag
-from helpers.test_helpers import create_usertagcategory
-from helpers.test_helpers import create_event
-from helpers.test_helpers import create_body
 
 def celery_delay(delay=2):
     """Wait for Celery."""

@@ -1,7 +1,9 @@
 """Serializers for UserProfile."""
 from django.conf import settings
 from rest_framework import serializers
+
 from users.models import UserProfile
+
 
 class UserProfileSerializer(serializers.ModelSerializer):
     """Serializer for UserProfile."""

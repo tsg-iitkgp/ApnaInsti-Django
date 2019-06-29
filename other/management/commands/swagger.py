@@ -1,10 +1,12 @@
 import json
+
 import yaml
 from django.core.management.base import BaseCommand
 from django.http import HttpRequest
-from rest_framework_swagger.renderers import OpenAPIRenderer
-from rest_framework.decorators import api_view, renderer_classes
 from rest_framework import response, schemas
+from rest_framework.decorators import api_view, renderer_classes
+from rest_framework_swagger.renderers import OpenAPIRenderer
+
 
 @api_view()
 @renderer_classes([OpenAPIRenderer])

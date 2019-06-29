@@ -1,8 +1,11 @@
 """Dangerous: Convert all roles to former roles."""
 import random
+
 from django.core.management.base import BaseCommand
+
 from roles.models import BodyRole
 from users.models import UserFormerRole
+
 
 class Command(BaseCommand):
     help = 'Dangerous: Convert all roles to former roles.'

@@ -1,5 +1,6 @@
 """URLs for events."""
 from django.urls import path
+
 from events.views import EventViewSet
 
 urlpatterns = [

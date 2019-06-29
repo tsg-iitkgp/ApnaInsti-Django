@@ -1,7 +1,9 @@
 from django.contrib.sitemaps import Sitemap
+
+from bodies.models import Body
 from events.models import Event
 from events.prioritizer import get_fresh_events
-from bodies.models import Body
+
 
 class EventSitemap(Sitemap):
     changefreq = "never"

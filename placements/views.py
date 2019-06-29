@@ -1,11 +1,12 @@
 from django.conf import settings
-from rest_framework.response import Response
 from rest_framework import viewsets
+from rest_framework.response import Response
+
+from helpers.misc import query_from_num, query_search
 from placements.models import BlogEntry
 from placements.serializers import BlogEntrySerializer
 from roles.helpers import login_required_ajax
-from helpers.misc import query_from_num
-from helpers.misc import query_search
+
 
 class PlacementBlogViewset(viewsets.ViewSet):
 

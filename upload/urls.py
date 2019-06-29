@@ -1,5 +1,6 @@
 """URLs for upload."""
 from django.urls import path
+
 from upload.views import UploadViewSet
 
 urlpatterns = [

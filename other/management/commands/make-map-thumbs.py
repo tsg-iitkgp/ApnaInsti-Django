@@ -1,8 +1,10 @@
 """Chore to generate map location thumbnails."""
 import os
-from django.core.management.base import BaseCommand
+
 from django.conf import settings
+from django.core.management.base import BaseCommand
 from PIL import Image
+
 from locations.models import Location
 
 MAP_FILE = 'map.jpg'

@@ -1,5 +1,7 @@
 from django.contrib import admin
+
 from other.models import Device
+
 
 class DeviceAdmin(admin.ModelAdmin):
     list_filter = ('application', 'last_ping', 'platform', 'app_version')

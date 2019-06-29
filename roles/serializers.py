@@ -1,13 +1,13 @@
 from rest_framework import serializers
-from roles.models import BodyRole
-from roles.models import InstituteRole
-from roles.models import PERMISSION_CHOICES
-from roles.models import INSTITUTE_PERMISSION_CHOICES
+
 from bodies.serializer_min import BodySerializerMin
-from users.serializers import UserProfileSerializer
-from users.models import UserFormerRole
-from events.serializers import EventSerializer
 from events.prioritizer import get_fresh_prioritized_events
+from events.serializers import EventSerializer
+from roles.models import (INSTITUTE_PERMISSION_CHOICES, PERMISSION_CHOICES,
+                          BodyRole, InstituteRole)
+from users.models import UserFormerRole
+from users.serializers import UserProfileSerializer
+
 
 class RoleSerializer(serializers.ModelSerializer):
     """Role Serializer"""

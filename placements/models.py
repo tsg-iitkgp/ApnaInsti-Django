@@ -1,7 +1,9 @@
 """Models for placements."""
 from uuid import uuid4
+
 from django.db import models
 from django.utils.timezone import now
+
 
 class BlogEntry(models.Model):
     """A single entry on the placements blog."""

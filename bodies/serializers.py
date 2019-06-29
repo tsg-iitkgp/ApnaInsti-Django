@@ -1,11 +1,12 @@
 """Serializers for Body and BodyChildRelation."""
+from django.db.models import Count, Q
 from rest_framework import serializers
-from django.db.models import Count
-from django.db.models import Q
-from events.prioritizer import get_fresh_prioritized_events
+
 from bodies.models import Body
 from bodies.serializer_min import BodySerializerMin
+from events.prioritizer import get_fresh_prioritized_events
 from helpers.misc import sort_by_field
+
 
 class BodySerializer(serializers.ModelSerializer):
     """Serializer for Body."""

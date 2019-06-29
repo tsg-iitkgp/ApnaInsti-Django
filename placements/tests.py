@@ -6,9 +6,11 @@ from django.conf import settings
 from django.core.management import call_command
 from freezegun import freeze_time
 from rest_framework.test import APITestCase
+
 from helpers.test_helpers import create_body
-from placements.models import BlogEntry
 from login.tests import get_new_user
+from placements.models import BlogEntry
+
 
 def test_blog(obj, url, count):
     """Helper for testing authenticated blog endpoints."""

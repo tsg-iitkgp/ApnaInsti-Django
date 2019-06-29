@@ -1,12 +1,14 @@
 """Helpers for FCM notifications."""
 from bs4 import BeautifulSoup
 from django.conf import settings
-from placements.models import BlogEntry
+
 from events.models import Event
-from news.models import NewsEntry
-from venter.models import ComplaintComment
 from helpers.device import fill_device_firebase
+from news.models import NewsEntry
 from other.views import get_notif_queryset
+from placements.models import BlogEntry
+from venter.models import ComplaintComment
+
 
 def send_fcm_data_message(push_service, registration_id, data_message):
     """Send a data FCM message."""

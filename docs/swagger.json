@@ -717,15 +717,15 @@
     },
     "/api/login": {
       "get": {
-        "operationId": "login_0",
+        "operationId": "pass_login",
         "responses": {
           "200": {
             "description": ""
           }
         },
         "parameters": [],
-        "description": "Log in.\nUses the `code` and `redir` query parameters.",
-        "summary": "Log in."
+        "description": "Login using institute email address and password.",
+        "summary": "Login using institute email address and password."
       }
     },
     "/api/login/get-user": {
@@ -839,17 +839,6 @@
         ]
       }
     },
-    "/api/pass-login": {
-      "get": {
-        "operationId": "pass_login",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": []
-      }
-    },
     "/api/placement-blog": {
       "get": {
         "operationId": "placement_blog",
@@ -907,6 +896,10 @@
                 "priority": {
                   "description": "",
                   "type": "integer"
+                },
+                "official_post": {
+                  "description": "",
+                  "type": "boolean"
                 }
               },
               "required": [
@@ -1001,6 +994,10 @@
                 "priority": {
                   "description": "",
                   "type": "integer"
+                },
+                "official_post": {
+                  "description": "",
+                  "type": "boolean"
                 }
               },
               "required": [
@@ -1053,6 +1050,19 @@
           }
         },
         "parameters": []
+      }
+    },
+    "/api/signup": {
+      "get": {
+        "operationId": "signup",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "description": "Signup using institute email ID.\n\nSignup using a user's institute email ID and send them a password over there.",
+        "summary": "Signup using institute email ID."
       }
     },
     "/api/training-blog": {
@@ -1460,6 +1470,22 @@
         "parameters": [],
         "description": "Get a list of categories of user tags with nested tags.",
         "summary": "Get a list of categories of user tags with nested tags."
+      }
+    },
+    "/api/user-tags/reach": {
+      "post": {
+        "operationId": "user-tags_get_user_tags_reach",
+        "responses": {
+          "201": {
+            "description": ""
+          }
+        },
+        "parameters": [],
+        "description": "Get reach of selected user tags.",
+        "summary": "Get reach of selected user tags.",
+        "tags": [
+          "user-tags"
+        ]
       }
     },
     "/api/users/{id}": {

@@ -1,9 +1,11 @@
 from django.core.management.base import BaseCommand
 from django.utils import timezone
-from upload.models import UploadedImage
-from events.models import Event
+
 from bodies.models import Body
+from events.models import Event
+from upload.models import UploadedImage
 from venter.models import ComplaintImage
+
 
 class Command(BaseCommand):
     help = 'Check claims and clean unclaimed images.'

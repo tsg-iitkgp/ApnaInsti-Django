@@ -3,23 +3,20 @@ from datetime import timedelta
 
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
-from rest_framework.response import Response
 from rest_framework import viewsets
+from rest_framework.response import Response
 
-from roles.helpers import login_required_ajax
 from bodies.models import Body
 from bodies.serializer_min import BodySerializerMin
 from events.models import Event
-from events.serializers import EventSerializer
 from events.prioritizer import get_prioritized
-from users.models import UserProfile
-from users.models import UserTagCategory
-from users.models import UserTag
+from events.serializers import EventSerializer
+from helpers.misc import query_search, users_from_tags
+from other.serializers import NotificationSerializer, UserTagCategorySerializer
+from roles.helpers import login_required_ajax
+from users.models import UserProfile, UserTag, UserTagCategory
 from users.serializers import UserProfileSerializer
-from other.serializers import NotificationSerializer
-from other.serializers import UserTagCategorySerializer
-from helpers.misc import query_search
-from helpers.misc import users_from_tags
+
 
 def get_notif_queryset(queryset):
     return queryset.unread().filter(timestamp__gte=timezone.now() - timedelta(days=7))

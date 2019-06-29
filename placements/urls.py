@@ -1,5 +1,6 @@
 """URLs for placments."""
 from django.urls import path
+
 from placements.views import PlacementBlogViewset
 
 urlpatterns = [

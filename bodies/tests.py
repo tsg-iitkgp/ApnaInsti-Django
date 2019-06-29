@@ -1,11 +1,11 @@
 """Unit tests for Body."""
 from django.test import TransactionTestCase
 from rest_framework.test import APIClient
-from bodies.models import Body
-from bodies.models import BodyChildRelation
-from roles.models import InstituteRole
-from roles.models import BodyRole
+
+from bodies.models import Body, BodyChildRelation
 from login.tests import get_new_user
+from roles.models import BodyRole, InstituteRole
+
 
 class BodyTestCase(TransactionTestCase):
     """Check if we can create bodies and link events."""

@@ -1,7 +1,8 @@
 """Serializers for mess menu."""
 from rest_framework import serializers
-from messmenu.models import MenuEntry
-from messmenu.models import Hostel
+
+from messmenu.models import Hostel, MenuEntry
+
 
 class MenuEntrySerializer(serializers.ModelSerializer):
     """Serializer for one mess menu entry."""

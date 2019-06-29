@@ -1,8 +1,11 @@
 """Models for news feed."""
 from uuid import uuid4
+
 from django.db import models
 from django.utils.timezone import now
+
 from bodies.models import Body
+
 
 class NewsEntry(models.Model):
     """A single entry on a news blog."""

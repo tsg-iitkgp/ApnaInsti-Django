@@ -1,5 +1,6 @@
 """URLs for prerender."""
 from django.urls import path
+
 import prerender.views as pr
 
 urlpatterns = [

@@ -1,18 +1,18 @@
 """Views for bodies app."""
 from uuid import UUID
+
+from django.shortcuts import get_object_or_404
 from rest_framework import viewsets
 from rest_framework.response import Response
-from django.shortcuts import get_object_or_404
 
-from bodies.serializers_followers import BodyFollowersSerializer
-from bodies.serializers import BodySerializer
-from bodies.serializer_min import BodySerializerMin
 from bodies.models import Body
-from roles.helpers import user_has_privilege
-from roles.helpers import forbidden_no_privileges
-from roles.helpers import login_required_ajax
-from roles.helpers import insti_permission_required
+from bodies.serializer_min import BodySerializerMin
+from bodies.serializers import BodySerializer
+from bodies.serializers_followers import BodyFollowersSerializer
 from helpers.misc import sort_by_field
+from roles.helpers import (forbidden_no_privileges, insti_permission_required,
+                           login_required_ajax, user_has_privilege)
+
 
 class BodyViewSet(viewsets.ModelViewSet):
     """Body"""

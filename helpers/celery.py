@@ -1,7 +1,6 @@
-from django.db import connection
+from celery import Task, shared_task
 from django.conf import settings
-from celery import Task
-from celery import shared_task
+from django.db import connection
 
 # pylint: disable=W0223
 

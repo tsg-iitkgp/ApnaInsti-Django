@@ -12,6 +12,7 @@ Send a POST request::
 import json
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
+
 def send_302(obj, loc):
     obj.send_response(302)
     obj.send_header('Location', loc)

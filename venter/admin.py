@@ -1,12 +1,11 @@
 """Admin models for venter."""
+from django.conf import settings
 from django.contrib import admin
 from django.core.mail import send_mail
-from django.conf import settings
-from venter.models import Complaint
-from venter.models import ComplaintComment
-from venter.models import ComplaintTag
-from venter.models import ComplaintImage
-from venter.models import ComplaintAuthority
+
+from venter.models import (Complaint, ComplaintAuthority, ComplaintComment,
+                           ComplaintImage, ComplaintTag)
+
 
 class ComplaintCommentTabularInline(admin.TabularInline):
     model = ComplaintComment

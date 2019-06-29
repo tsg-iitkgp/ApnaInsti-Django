@@ -1,7 +1,10 @@
 """Models for Event and UserEventStatus."""
 from uuid import uuid4
+
 from django.db import models
+
 from helpers.misc import get_url_friendly
+
 
 class Event(models.Model):
     """An event to be associated with one or more Bodies.

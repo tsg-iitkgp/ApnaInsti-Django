@@ -1,11 +1,14 @@
 """Chore to send rich notifications for event about to start."""
 from datetime import timedelta
+
 from django.conf import settings
 from django.core.management.base import BaseCommand
 from django.utils import timezone
 from pyfcm import FCMNotification
+
 from events.models import Event
 from helpers.fcm import send_notification_fcm
+
 
 class Command(BaseCommand):
     help = 'Sends push notifications of event starting'

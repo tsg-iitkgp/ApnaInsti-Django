@@ -1,6 +1,8 @@
 """Serializers for Body Followers."""
 from rest_framework import serializers
+
 from bodies.models import Body
+
 
 class BodyFollowersSerializer(serializers.ModelSerializer):
     """Serizlizer with list of followers of body."""

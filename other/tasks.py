@@ -1,17 +1,17 @@
 from __future__ import absolute_import, unicode_literals
+
 from django.conf import settings
-from django.contrib.contenttypes.models import ContentType
 from django.contrib.auth.models import User
+from django.contrib.contenttypes.models import ContentType
 from notifications.models import Notification
 from notifications.signals import notify
 from pyfcm import FCMNotification
-from events.models import Event
-from helpers.celery import shared_task_conditional
-from helpers.celery import FaultTolerantTask
 
-from helpers.fcm import send_notification_fcm
-from helpers.fcm import get_rich_notification
+from events.models import Event
+from helpers.celery import FaultTolerantTask, shared_task_conditional
+from helpers.fcm import get_rich_notification, send_notification_fcm
 from helpers.webpush import send_notification_webpush
+
 
 def setUp():
     """Do initial setup for each async task"""

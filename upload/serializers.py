@@ -1,7 +1,9 @@
 """Serializer for Image Uploads."""
-from rest_framework import serializers
 from drf_extra_fields.fields import Base64ImageField
+from rest_framework import serializers
+
 from upload.models import UploadedImage
+
 
 class BaseUploadedImageSerializer(serializers.ModelSerializer):
     """Base Serializer for UploadedImage."""

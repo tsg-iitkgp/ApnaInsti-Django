@@ -1,7 +1,9 @@
 """Helpers for web push notifications."""
 import json
-from pywebpush import webpush, WebPushException
+
 from django.conf import settings
+from pywebpush import WebPushException, webpush
+
 
 def send_push(subscription, payload):
     """Send a single push notification."""

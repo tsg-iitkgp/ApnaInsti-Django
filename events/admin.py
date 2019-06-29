@@ -1,5 +1,7 @@
 from django.contrib import admin
+
 from events.models import Event, UserEventStatus
+
 
 class EventAdmin(admin.ModelAdmin):
     list_filter = ('start_time',)

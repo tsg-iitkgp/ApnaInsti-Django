@@ -2,8 +2,10 @@
 from django.conf import settings
 from django.core.management.base import BaseCommand
 from pyfcm import FCMNotification
-from other.models import Device
+
 from helpers.device import fill_device_firebase
+from other.models import Device
+
 
 class Command(BaseCommand):
     help = 'Sends push notifications of event starting'

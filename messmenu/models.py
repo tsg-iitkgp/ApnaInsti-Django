@@ -1,6 +1,8 @@
 """Mess menu models."""
 from uuid import uuid4
+
 from django.db import models
+
 
 class Hostel(models.Model):
     """Entry for each hostel."""

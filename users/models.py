@@ -1,9 +1,11 @@
 """Model for UserProfile."""
 from __future__ import unicode_literals
+
 import re
 from uuid import uuid4
-from django.db import models
+
 from django.contrib.auth.models import User
+from django.db import models
 
 TAG_TARGET_CHOICES = (
     ('roll_no', 'Roll No'),

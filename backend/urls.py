@@ -14,10 +14,12 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
 from django.contrib.sitemaps.views import sitemap
+from django.urls import include, path
 from rest_framework_swagger.views import get_swagger_view
+
 from backend.sitemap import sitemaps
+
 
 def api_base(prefix=None):
     """Get the base URL for an endpoint set."""

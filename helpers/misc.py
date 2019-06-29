@@ -2,10 +2,12 @@
 import operator
 from collections import defaultdict
 from functools import reduce
-from django.db.models import Q
-from django.db.models import Count
+
 from bs4 import BeautifulSoup
+from django.db.models import Count, Q
+
 from users.models import UserProfile
+
 
 def get_url_friendly(name):
     """Converts the name to a url friendly string for use in `str_id`"""

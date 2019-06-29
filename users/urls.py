@@ -1,7 +1,8 @@
 """URLs for users."""
 from django.urls import path
-from users.views import UserProfileViewSet
+
 from roles.views import BodyRoleViewSet
+from users.views import UserProfileViewSet
 
 urlpatterns = [
     path('users/<pk>', UserProfileViewSet.as_view({

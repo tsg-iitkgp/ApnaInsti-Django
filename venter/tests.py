@@ -1,14 +1,13 @@
 from types import SimpleNamespace
-from django.core import mail
+
 from django.contrib.admin.sites import AdminSite
-from rest_framework.test import APITestCase, APIClient
+from django.core import mail
+from rest_framework.test import APIClient, APITestCase
+
 from login.tests import get_new_user
 from venter.admin import ComplaintModelAdmin
-from venter.models import Complaint
-from venter.models import ComplaintTag
-from venter.models import ComplaintComment
-from venter.models import ComplaintImage
-from venter.models import ComplaintAuthority
+from venter.models import (Complaint, ComplaintAuthority, ComplaintComment,
+                           ComplaintImage, ComplaintTag)
 
 # Status variables for complaints
 STATUS_REPORTED = 'Reported'

@@ -1,10 +1,9 @@
 """Serializers for venter."""
 from rest_framework import serializers
-from users.serializers import UserProfileSerializer
 
-from venter.models import Complaint
-from venter.models import ComplaintTag
-from venter.models import ComplaintComment
+from users.serializers import UserProfileSerializer
+from venter.models import Complaint, ComplaintComment, ComplaintTag
+
 
 class TagSerializer(serializers.ModelSerializer):
     class Meta:

@@ -1,9 +1,10 @@
-from rest_framework.response import Response
 from rest_framework import viewsets
+from rest_framework.response import Response
+
+from helpers.misc import query_from_num, query_search
 from news.models import NewsEntry
 from news.serializers import NewsEntrySerializer
-from helpers.misc import query_from_num
-from helpers.misc import query_search
+
 
 class NewsFeedViewset(viewsets.ViewSet):
 

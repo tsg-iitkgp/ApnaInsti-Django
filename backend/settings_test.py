@@ -2,6 +2,7 @@
 
 # pylint: disable=W0401, W0614
 import os
+
 from backend.settings_base import *
 
 # SECURITY WARNING: keep the secret key used in production secret!

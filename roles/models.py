@@ -1,5 +1,6 @@
 """Models for Roles, which define things a user can do."""
 from uuid import uuid4
+
 from django.db import models
 from multiselectfield import MultiSelectField
 

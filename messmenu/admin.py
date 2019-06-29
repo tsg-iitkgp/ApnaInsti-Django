@@ -1,6 +1,6 @@
 from django.contrib import admin
-from messmenu.models import Hostel
-from messmenu.models import MenuEntry
+
+from messmenu.models import Hostel, MenuEntry
 
 # Register your models here.
 admin.site.register(Hostel)

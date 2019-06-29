@@ -2,14 +2,15 @@
 import time
 from subprocess import Popen
 
+from django.core.management import call_command
 from freezegun import freeze_time
 from rest_framework.test import APITestCase
-from django.core.management import call_command
-from news.models import NewsEntry
-from news.models import UserNewsReaction
+
 from bodies.models import Body
-from login.tests import get_new_user
 from helpers.fcm import get_news_image
+from login.tests import get_new_user
+from news.models import NewsEntry, UserNewsReaction
+
 
 class NewsTestCase(APITestCase):
     """Test news endpoints."""

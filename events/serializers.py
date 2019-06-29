@@ -1,11 +1,10 @@
 """Serializers for Event."""
+from django.db.models import Count, Prefetch, Q
 from rest_framework import serializers
-from django.db.models import Count
-from django.db.models import Prefetch
-from django.db.models import Q
-from events.models import Event
-from events.models import UserEventStatus
+
+from events.models import Event, UserEventStatus
 from users.models import UserTag
+
 
 def get_followers(obj, status):
     """Get serialized followers with specified status."""

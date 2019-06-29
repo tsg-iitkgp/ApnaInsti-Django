@@ -1,7 +1,10 @@
 """Models for Body and their children (BodyChildRelation)."""
 from uuid import uuid4
+
 from django.db import models
+
 from helpers.misc import get_url_friendly
+
 
 class Body(models.Model):
     """An organization or club which may conduct events."""

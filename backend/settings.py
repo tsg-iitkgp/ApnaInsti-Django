@@ -1,6 +1,5 @@
 """Settings for dev environment."""
 
-# pylint: disable=W0401, W0614
 from backend.settings_base import *
 
 # SECURITY WARNING: keep the secret key used in production secret!

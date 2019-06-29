@@ -1,13 +1,12 @@
 """Viewsets for bodies."""
 from rest_framework import viewsets
 from rest_framework.response import Response
+
+from roles.helpers import (forbidden_no_privileges, login_required_ajax,
+                           user_has_insti_privilege, user_has_privilege)
 from roles.models import BodyRole
-from roles.serializers import RoleSerializer
-from roles.serializers import RoleSerializerWithEvents
-from roles.helpers import user_has_privilege
-from roles.helpers import user_has_insti_privilege
-from roles.helpers import login_required_ajax
-from roles.helpers import forbidden_no_privileges
+from roles.serializers import RoleSerializer, RoleSerializerWithEvents
+
 
 class BodyRoleViewSet(viewsets.ModelViewSet):
     """Body Role"""

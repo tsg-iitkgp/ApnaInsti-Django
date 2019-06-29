@@ -1,16 +1,19 @@
 import re
+
 import feedparser
 import requests
-from requests.auth import HTTPBasicAuth
 from dateutil.parser import parse
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand, CommandError
 from notifications.signals import notify
-from users.models import UserProfile
+from requests.auth import HTTPBasicAuth
+
 from bodies.models import Body
-from placements.models import BlogEntry
 from helpers.misc import table_to_markdown
+from placements.models import BlogEntry
+from users.models import UserProfile
+
 
 class ProfileFetcher():
     """Helper to get dictionary of profiles efficiently."""

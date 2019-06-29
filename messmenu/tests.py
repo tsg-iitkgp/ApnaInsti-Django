@@ -1,7 +1,8 @@
 """Unit tests for Mess."""
 from rest_framework.test import APITestCase
-from messmenu.models import MenuEntry
-from messmenu.models import Hostel
+
+from messmenu.models import Hostel, MenuEntry
+
 
 class MessTestCase(APITestCase):
     """Check mess menu endpoints."""

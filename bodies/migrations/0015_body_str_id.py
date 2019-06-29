@@ -2,6 +2,7 @@
 
 from django.db import migrations, models
 
+
 def set_my_defaults(apps, schema_editor):
     Body = apps.get_model('bodies', 'Body')
     for body in Body.objects.all().iterator():

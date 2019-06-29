@@ -1,9 +1,9 @@
 """Notifications Signals."""
+from django.contrib.auth.models import User
+from django.db.models.signals import m2m_changed, post_save
 from notifications.models import Notification
 from notifications.signals import notify
-from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.db.models.signals import m2m_changed
+
 import other.tasks as tasks
 from events.models import Event
 from news.models import NewsEntry

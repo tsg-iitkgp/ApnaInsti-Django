@@ -1,15 +1,16 @@
 """Serializers for non-specific models."""
 from rest_framework import serializers
+
 from events.models import Event
 from events.serializers import EventSerializer
-from placements.models import BlogEntry
-from placements.serializers import BlogEntrySerializer
 from news.models import NewsEntry
 from news.serializers import NewsEntrySerializer
+from placements.models import BlogEntry
+from placements.serializers import BlogEntrySerializer
+from users.models import UserTag, UserTagCategory
 from venter.models import ComplaintComment
 from venter.serializers import CommentSerializer
-from users.models import UserTag
-from users.models import UserTagCategory
+
 
 class GenericNotificationRelatedField(serializers.RelatedField):  # pylint: disable=W0223
     """Serializer for actor/target of notifications."""
