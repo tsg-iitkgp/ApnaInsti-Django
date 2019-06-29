@@ -21,13 +21,13 @@ if not NO_CELERY:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'test_instiapp',
+            'NAME': 'test_apnainsti',
             'USER': 'postgres',
             'PASSWORD': 'password',
             'HOST': 'localhost',
             'PORT': os.environ.get('PGPORT', '5432'),
             'TEST': {
-                'NAME': 'test_instiapp',
+                'NAME': 'test_apnainsti',
             },
         }
     }

@@ -11,7 +11,7 @@ from rest_framework_swagger.renderers import OpenAPIRenderer
 @api_view()
 @renderer_classes([OpenAPIRenderer])
 def schema_view(request):
-    generator = schemas.SchemaGenerator(title='InstiApp API')
+    generator = schemas.SchemaGenerator(title='ApnaInsti API')
     return response.Response(generator.get_schema(request=request))
 
 class Command(BaseCommand):

@@ -1,6 +1,6 @@
-# InstiApp
+# ApnaInsti
 
-API in Django for IIT KGP's App (derived from InstiApp), the one platform for all student activities at Indian Institute of Technology, Kharagpur! InstiApp's features include upcoming events, placement blog, news and general information on every active club / body in the Institute.
+API in Django for IIT KGP's ApnaInsti App (derived from InstiApp, IIT Bombay), the one platform for all student activities at Indian Institute of Technology, Kharagpur! ApnaInsti's features include upcoming events, placement blog, news and general information on every active club / body in the Institute.
 
 <!-- [![InstiApp](https: // insti.app / instiapp - badge - gh.svg)](https: // insti.app) - ->
 <!-- [![TravisCI](https: // api.travis - ci.org / wncc / IITBapp.svg?branch=master)](https: // travis - ci.org / wncc / IITBapp) - ->
@@ -35,7 +35,7 @@ This is the recommended and default configuration, and should suffice for all de
 
 # With Celery
 
-This is the default configuration for CircleCI builds. To test under this configuration, start a local PostgresQL and RabbitMQ server, and an instance of celery in background with `celery - A backend worker - -pool = solo - l info`. Once celery is processing background tasks, you can run tests as `python manage.py test - -settings backend.settings_test - -keepdb`, ensuring that the database `test_instiapp` is created in postgres beforehand. The following environment variables must be set:
+This is the default configuration for CircleCI builds. To test under this configuration, start a local PostgresQL and RabbitMQ server, and an instance of celery in background with `celery - A backend worker - -pool = solo - l info`. Once celery is processing background tasks, you can run tests as `python manage.py test - -settings backend.settings_test - -keepdb`, ensuring that the database `test_apnainsti` is created in postgres beforehand. The following environment variables must be set:
 
 * `DJANGO_SETTINGS_MODULE` to `backend.settings_test`
 * `NO_CELERY` to `false`

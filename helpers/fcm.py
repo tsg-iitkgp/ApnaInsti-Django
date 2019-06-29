@@ -58,7 +58,7 @@ def get_news_image(news):
 
 def get_rich_notification(notification):
     # Get title
-    title = "InstiApp"
+    title = "ApnaInsti"
 
     # Default values
     notification_type = None

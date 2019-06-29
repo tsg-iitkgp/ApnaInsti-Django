@@ -29,8 +29,8 @@ def api_base(prefix=None):
 
 
 # Set admin site titles
-admin.site.site_header = 'InstiApp admin'
-admin.site.site_title = 'InstiApp admin'
+admin.site.site_header = 'ApnaInsti admin'
+admin.site.site_title = 'ApnaInsti admin'
 
 urlpatterns = [
     # Admin site

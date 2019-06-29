@@ -130,7 +130,7 @@ DJANGO_NOTIFICATIONS_CONFIG = {'SOFT_DELETE': True}
 
 # Prerender configuration
 PRERENDER_TITLE = 'ApnaInsti | IIT KGP'
-PRERENDER_DESCRIPTION = 'InstiApp is the front page of all student activities at IIT KGP'
+PRERENDER_DESCRIPTION = 'ApnaInsti is the front page of all student activities at IIT KGP'
 LOGO_URL = 'https://insti.app/assets/logo.png'
 
 # # Placement blog URLs
