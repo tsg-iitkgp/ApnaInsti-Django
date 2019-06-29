@@ -19,7 +19,7 @@ class LoginViewSet(viewsets.ViewSet):
     def signup(request):
         """
         Signup using institute email ID.
-        
+
         Signup using a user's institute email ID and send them a password over there.
         """
 
@@ -27,12 +27,12 @@ class LoginViewSet(viewsets.ViewSet):
         instiID = request.GET.get('username')
         if instiID is None:
             return Response({"message": "instituteID is required"}, status=400)
-        
+
         if not valid_insti_id(instiID):
             return Response({"message": "instituteID is not valid"}, status=400)
 
         return perform_signup(instiID, request)
-    
+
     @staticmethod
     def pass_login(request):
         """
@@ -48,10 +48,10 @@ class LoginViewSet(viewsets.ViewSet):
         password = request.GET.get('password')
         if password is None:
             return Response({"message": "{?password} is required"}, status=400)
-        
+
         if User.objects.filter(username=username).first() is None:
             return Response({"message": "no user with {} found".format(username)}, status=404)
-        
+
         return perform_login(request)
 
     @staticmethod

@@ -6,7 +6,6 @@ from events.models import Event
 from helpers.device import fill_device_firebase
 from news.models import NewsEntry
 from other.views import get_notif_queryset
-from placements.models import BlogEntry
 from venter.models import ComplaintComment
 
 
@@ -84,11 +83,6 @@ def get_rich_notification(notification):
             body = actor.bodies.first()
             if body:
                 notification_large_icon = body.image_url
-
-        # News/Blog Entry
-        if isinstance(actor, (BlogEntry, NewsEntry)):
-            title = actor.title
-            notification_extra = actor.link
 
         # Rich field for news entry
         if isinstance(actor, NewsEntry):

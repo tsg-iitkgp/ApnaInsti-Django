@@ -5,8 +5,6 @@ from events.models import Event
 from events.serializers import EventSerializer
 from news.models import NewsEntry
 from news.serializers import NewsEntrySerializer
-from placements.models import BlogEntry
-from placements.serializers import BlogEntrySerializer
 from users.models import UserTag, UserTagCategory
 from venter.models import ComplaintComment
 from venter.serializers import CommentSerializer
@@ -14,13 +12,12 @@ from venter.serializers import CommentSerializer
 
 class GenericNotificationRelatedField(serializers.RelatedField):  # pylint: disable=W0223
     """Serializer for actor/target of notifications."""
+
     def to_representation(self, value):
         if isinstance(value, Event):
             serializer = EventSerializer(value)
         elif isinstance(value, NewsEntry):
             serializer = NewsEntrySerializer(value)
-        elif isinstance(value, BlogEntry):
-            serializer = BlogEntrySerializer(value)
         elif isinstance(value, ComplaintComment):
             serializer = CommentSerializer(value)
 

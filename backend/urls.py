@@ -46,13 +46,12 @@ urlpatterns = [
     path(api_base(), include('messmenu.urls')),
     path(api_base(), include('news.urls')),
     path(api_base(), include('login.urls')),
-    path(api_base(), include('placements.urls')),
     path(api_base(), include('other.urls')),
     path(api_base('venter'), include("venter.urls")),
 
     # Non-API
     path('', include('prerender.urls')),
-    path(api_base('docs'), get_swagger_view(title='InstiApp API')),
+    path(api_base('docs'), get_swagger_view(title='ApnaInsti API')),
     path('sitemap.xml', sitemap, {
         'sitemaps': sitemaps()
     }, name='django.contrib.sitemaps.views.sitemap')

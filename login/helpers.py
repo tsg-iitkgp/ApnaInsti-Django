@@ -27,8 +27,8 @@ def perform_signup(insti_id, request):
         return Response({
             'msg': "user with {username} already exists!".format(username=insti_id)
         })
-        
-    user = User.objects.create_user(username=insti_id, password=rand_pass) 
+
+    user = User.objects.create_user(username=insti_id, password=rand_pass)
 
     # Check if User has a profile and create if not
     user_profile = UserProfile.objects.create(user=user, name='')
@@ -49,7 +49,7 @@ def perform_signup(insti_id, request):
     return Response({
         'msg': "{username} created, please check mail inbox for login details.".format(username=user.username)
     })
-    
+
 def perform_login(request):
     """
     Perform login and retain session.
@@ -63,16 +63,16 @@ def perform_login(request):
         # load user profile
         queryset = UserProfileFullSerializer.setup_eager_loading(UserProfile.objects)
         user_profile = queryset.get(user=user)
-        
+
         login(request, user)
         # Return the session id
         return Response({
-        'sessionid': request.session.session_key,
-        'user': user.username,
-        'profile_id': user_profile.id,
-        'profile': UserProfileFullSerializer(
-            user_profile, context={'request': request}).data
-    })
+            'sessionid': request.session.session_key,
+            'user': user.username,
+            'profile_id': user_profile.id,
+            'profile': UserProfileFullSerializer(
+                user_profile, context={'request': request}).data
+        })
 
     return HttpResponse("Invalid login credentials given!")
 
@@ -84,7 +84,7 @@ def valid_insti_id(insti_mail):
         validate_email(insti_mail)
     except ValidationError as err:
         return False
-    
+
     suffix = insti_mail.split('@')[1]
     if suffix != settings.INSTI_MAIL_SUFFIX:
         return False

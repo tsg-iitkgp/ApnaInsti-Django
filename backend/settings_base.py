@@ -32,7 +32,6 @@ INSTALLED_APPS = [
     'bodies.apps.BodiesConfig',
     'upload.apps.UploadConfig',
     'roles.apps.RolesConfig',
-    'placements.apps.PlacementsConfig',
     'news.apps.NewsConfig',
     'messmenu.apps.MessmenuConfig',
     'other.apps.OtherConfig',
@@ -46,7 +45,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'backend.middle.DisableCSRFMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -130,17 +129,17 @@ REST_FRAMEWORK = {}
 DJANGO_NOTIFICATIONS_CONFIG = {'SOFT_DELETE': True}
 
 # Prerender configuration
-PRERENDER_TITLE = 'InstiApp | IIT Bombay'
-PRERENDER_DESCRIPTION = 'InstiApp is the front page of all student activities at IIT Bombay'
+PRERENDER_TITLE = 'ApnaInsti | IIT KGP'
+PRERENDER_DESCRIPTION = 'InstiApp is the front page of all student activities at IIT KGP'
 LOGO_URL = 'https://insti.app/assets/logo.png'
 
-# Placement blog URLs
-PLACEMENTS_URL = 'http://placements.iitb.ac.in/blog/?feed=rss2'
-TRAINING_BLOG_URL = 'http://placements.iitb.ac.in/trainingblog/?feed=rss2'
+# # Placement blog URLs
+# PLACEMENTS_URL = 'http://placements.iitb.ac.in/blog/?feed=rss2'
+# TRAINING_BLOG_URL = 'http://placements.iitb.ac.in/trainingblog/?feed=rss2'
 
-# Names of bodies to notify when there are new posts on placement/training blog
-PLACEMENTS_BLOG_BODY = 'Placement Blog'
-TRAINING_BLOG_BODY = 'Internship Blog'
+# # Names of bodies to notify when there are new posts on placement/training blog
+# PLACEMENTS_BLOG_BODY = 'Placement Blog'
+# TRAINING_BLOG_BODY = 'Internship Blog'
 
 # Authentication for chores
 LDAP_USERNAME = None
@@ -152,7 +151,7 @@ if 'LDAP_USERNAME' in os.environ and 'LDAP_PASSWORD' in os.environ:
     print('INFO: LDAP username and password present in environment.')
 
 # Flip for broken external server certificates
-SSO_BAD_CERT = False
+# SSO_BAD_CERT = False
 
 # Default icons for notifications
 NOTIFICATION_LARGE_ICON_DEFAULT = 'assets/logo.png'

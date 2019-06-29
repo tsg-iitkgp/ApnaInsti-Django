@@ -16,7 +16,6 @@ from helpers.test_helpers import (create_body, create_event, create_usertag,
                                   create_usertagcategory)
 from login.tests import get_new_user
 from news.models import NewsEntry
-from placements.models import BlogEntry
 from users.models import UserProfile
 from venter.models import Complaint
 
@@ -285,22 +284,6 @@ class OtherTestCase(TransactionTestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(len(response.data), 1)
         self.assertEqual(response.data[0]['actor']['commented_by']['id'], str(test_commenter_2.profile.id))
-
-    def test_pt_notifications(self):
-        """Test notifications for placement blog (Incomplete - only serializer)"""
-        # Create dummy
-        entry = BlogEntry.objects.create(
-            title="BlogEntry1", blog_url='https://test.com', published=timezone.now())
-
-        # Notify
-        notify.send(entry, recipient=self.user, verb="TEST")
-
-        # Get notifications
-        url = '/api/notifications'
-        response = self.client.get(url)
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(len(response.data), 1)
-        self.assertEqual(response.data[0]['actor']['title'], entry.title)
 
     def test_sitemap(self):
         """Test dynamic sitemap."""

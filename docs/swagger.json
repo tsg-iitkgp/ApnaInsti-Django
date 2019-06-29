@@ -839,19 +839,6 @@
         ]
       }
     },
-    "/api/placement-blog": {
-      "get": {
-        "operationId": "placement_blog",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [],
-        "description": "Get Placement Blog.",
-        "summary": "Get Placement Blog."
-      }
-    },
     "/api/roles": {
       "post": {
         "operationId": "roles_create",
@@ -1063,19 +1050,6 @@
         "parameters": [],
         "description": "Signup using institute email ID.\n\nSignup using a user's institute email ID and send them a password over there.",
         "summary": "Signup using institute email ID."
-      }
-    },
-    "/api/training-blog": {
-      "get": {
-        "operationId": "training_blog",
-        "responses": {
-          "200": {
-            "description": ""
-          }
-        },
-        "parameters": [],
-        "description": "Get Training Blog.",
-        "summary": "Get Training Blog."
       }
     },
     "/api/upload": {
