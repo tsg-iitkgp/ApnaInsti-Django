@@ -2,7 +2,7 @@
 
 API in Django for IIT KGP's ApnaInsti App (derived from InstiApp, IIT Bombay), the one platform for all student activities at Indian Institute of Technology, Kharagpur! ApnaInsti's features include upcoming events, placement blog, news and general information on every active club / body in the Institute.
 
-<!-- [![InstiApp](https: // insti.app / instiapp - badge - gh.svg)](https: // insti.app) - ->
+<!-- <!-- [![InstiApp](https: // insti.app / instiapp - badge - gh.svg)](https: // insti.app) - ->
 <!-- [![TravisCI](https: // api.travis - ci.org / wncc / IITBapp.svg?branch=master)](https: // travis - ci.org / wncc / IITBapp) - ->
 <!-- [![CircleCI](https: // circleci.com / gh / wncc / IITBapp.svg?style=shield)](https: // circleci.com / gh / wncc / IITBapp) - ->
 
@@ -12,9 +12,10 @@ API in Django for IIT KGP's ApnaInsti App (derived from InstiApp, IIT Bombay), t
                                                                                                               utm_content=wncc / IITBapp & amp
                                                                                                               utm_campaign=Badge_Grade) - ->
 <!-- [![Requirements Status](https: // requires.io / github / wncc / IITBapp / requirements.svg?branch=master)](https: // requires.io / github / wncc / IITBapp / requirements /?branch=master) - ->
-<!-- [![GitHub license](https: // img.shields.io / github / license / wncc / IITBapp.svg)](https: // github.com / wncc / IITBapp / blob / master / LICENSE) - ->
+<!-- [![GitHub license](https: // img.shields.io / github / license / wncc / IITBapp.svg)](https: // github.com / wncc / IITBapp / blob / master / LICENSE) - -> -->
 
-# Setup
+## Setup
+
 To setup dependenices, make a new `virtualenv`, activate it and run `pip install - r requirements.txt`. Then you can run
 
 * `python manage.py migrate` to create a new database.
@@ -25,7 +26,7 @@ To setup dependenices, make a new `virtualenv`, activate it and run `pip install
 
 It is recommended to set up your IDE with both `pylint` and `flake8`, since these will cause the CircleCI build to fail. Google's[Python Style Guide](https: // google.github.io / styleguide / pyguide.html) is followed upto a certain extent in all modules.
 
-# Running Tests
+## Running Tests
 
 Tests can be run in two configurations:
 
@@ -33,25 +34,24 @@ Tests can be run in two configurations:
 
 This is the recommended and default configuration, and should suffice for all developmental purposes except if you are working with async tasks or notifications. Simply use `python manage.py test - -settings backend.settings_test` to run automated tests.
 
-# With Celery
+## With Celery
 
 This is the default configuration for CircleCI builds. To test under this configuration, start a local PostgresQL and RabbitMQ server, and an instance of celery in background with `celery - A backend worker - -pool = solo - l info`. Once celery is processing background tasks, you can run tests as `python manage.py test - -settings backend.settings_test - -keepdb`, ensuring that the database `test_apnainsti` is created in postgres beforehand. The following environment variables must be set:
 
 * `DJANGO_SETTINGS_MODULE` to `backend.settings_test`
 * `NO_CELERY` to `false`
 
-# Documentation
+## Documentation
 
 Static OpenAPI specification can be found at `http: // server / api / docs/`
 
 If you are modifying the API, make sure you regenerate `docs` by running `python manage.py swagger`
 
-# Adding Mess Menu
+## Adding Mess Menu
 
-Here is the template mess sheet to be used: https: // docs.google.com / spreadsheets / d / 1vrYGMLMRpH7ArHD1tC9V3u - AQHSrc14gqqY9O0h_vRk / edit?usp = sharing
+Here is the template mess sheet to be used: https://docs.google.com/spreadsheets/d/1vrYGMLMRpH7ArHD1tC9V3u-AQHSrc14gqqY9O0h_vRk/edit?usp=sharing
 
-
-# Contributing
+## Contributing
 
 Pull requests are welcome, but make sure the following criteria are satisfied
 
