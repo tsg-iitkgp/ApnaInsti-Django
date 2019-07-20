@@ -25,6 +25,7 @@ class LoginViewSet(viewsets.ViewSet):
 
         # Check if we have the institute email ID
         instiID = request.GET.get('username')
+        print(instiID)
         if instiID is None:
             return Response({"message": "instituteID is required"}, status=400)
 

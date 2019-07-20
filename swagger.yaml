@@ -407,12 +407,6 @@ paths:
             parent_relation:
               description: ''
               type: string
-            pixel_x:
-              description: ''
-              type: integer
-            pixel_y:
-              description: ''
-              type: integer
             reusable:
               description: ''
               type: boolean

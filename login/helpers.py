@@ -72,7 +72,7 @@ def perform_login(request):
             'profile_id': user_profile.id,
             'profile': UserProfileFullSerializer(
                 user_profile, context={'request': request}).data
-        })
+        }, status=200)
 
     return HttpResponse("Invalid login credentials given!")
 

@@ -9,7 +9,7 @@ class LocationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Location
-        fields = ('id', 'name', 'short_name', 'group_id', 'pixel_x', 'pixel_y',
+        fields = ('id', 'name', 'short_name', 'group_id',
                   'parent', 'parent_relation', 'description', 'lat', 'lng', 'reusable')
 
 class LocationSerializerMin(serializers.ModelSerializer):
